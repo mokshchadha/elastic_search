@@ -1,0 +1,19 @@
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+brew install openjdk
+
+brew tap elastic/tap
+brew install elastic/tap/elasticsearch-full
+
+brew services start elastic/tap/elasticsearch-full
+
+# to check if the elastic search is running or not
+curl http://localhost:9200
+
+Some useful commands:
+To stop Elasticsearch: brew services stop elastic/tap/elasticsearch-full
+To restart: brew services restart elastic/tap/elasticsearch-full
+To view logs: brew services log elastic/tap/elasticsearch-full
+
+
+==========================Installing Kibana=========================
